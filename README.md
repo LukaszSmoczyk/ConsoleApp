@@ -8,5 +8,6 @@ Lista uwag:
 6. Warto przy Streamach stosować 'using', aby uniknąć problemów z pamięcią.
 7. Parametr bool printData jest nieużywany, można by dać użytkownikowi wybór aby podał w konsoli czy np. chce wydrukować [Y/N].
 8. Umieszczenie klas z modelami w osobnym pliku, poprawia czytelność kodu.
+9. Using nad namespace -> poprawia czytelność kodu.
 
 Oczywiście, możliwych do wprowadzenia zmian jest bardzo dużo, wszystko zależy od tego czy ta aplikacja ma mieć zastosowanie jednorazowe, czy być aplikacją szerszego zastosowania. Wtedy można pokusić się o większą generalizację, zastoswanie abstrakcji/interfejsów.
