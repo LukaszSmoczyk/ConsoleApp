@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp.Model
 {
-    internal class ImportedObjectBaseClass
+    public class ImportedObjectBaseClass
     {
         public string Name { get; set; }
         public string Type { get; set; }

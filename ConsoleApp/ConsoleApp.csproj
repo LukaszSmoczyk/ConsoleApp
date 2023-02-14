@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataPrinter.cs" />
     <Compile Include="DataReader.cs" />
     <Compile Include="Model\ImportedObject.cs" />
     <Compile Include="Model\ImportedObjectBaseClass.cs" />

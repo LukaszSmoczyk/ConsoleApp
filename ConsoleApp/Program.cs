@@ -8,8 +8,10 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             var reader = new DataReader();
-            reader.ImportAndPrintData("data.csv");
+            var objects = reader.ImportAndOrganizeData("data.csv");
 
+            var printer = new DataPrinter();
+            printer.PrintData(objects);
             Console.ReadLine();
         }
     }

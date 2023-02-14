@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp.Model
 {
-    class ImportedObject : ImportedObjectBaseClass
+    public class ImportedObject : ImportedObjectBaseClass
     {
         public string Name
         {

@@ -12,18 +12,17 @@ namespace ConsoleApp
     public class DataReader
     {
 
-        public void ImportAndPrintData(string fileToImport, bool printData = true)
+        public List<ImportedObject> ImportAndOrganizeData(string fileToImport)
         {
 
             var importedLines = LoadData(fileToImport);
 
             var objectsList = SerializeAndOrganizeData(importedLines);
 
-            if (printData == true)
-            {
-                Print(objectsList);
-            }   
+            return objectsList;
         }
+
+
 
         private List<string> LoadData(string fileToImport)
         {
@@ -91,43 +90,6 @@ namespace ConsoleApp
             }
 
             return importedObjects;
-        }
-
-        private void Print(List<ImportedObject> objects)
-        {
-
-
-            foreach (var database in objects)
-            {
-                if (database.Type == "DATABASE")
-                {
-                    Console.WriteLine($"Database '{database.Name}' ({database.NumberOfChildren} tables)");
-
-                    // print all database's tables
-                    foreach (var table in objects)
-                    {
-                        if (table.ParentType.ToUpper() == database.Type)
-                        {
-                            if (table.ParentName == database.Name)
-                            {
-                                Console.WriteLine($"\tTable '{table.Schema}.{table.Name}' ({table.NumberOfChildren} columns)");
-
-                                // print all table's columns
-                                foreach (var column in objects)
-                                {
-                                    if (column.ParentType.ToUpper() == table.Type)
-                                    {
-                                        if (column.ParentName == table.Name)
-                                        {
-                                            Console.WriteLine($"\t\tColumn '{column.Name}' with {column.DataType} data type {(column.IsNullable == "1" ? "accepts nulls" : "with no nulls")}");
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 }
